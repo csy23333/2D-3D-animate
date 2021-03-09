@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      background-color: pink;
+    }
+
+    img {
+      width: 100%;
+      /* border-radius: 50%; */
+      border: 5px solid red;
+      transition: all 2s;
+      transform-origin: left bottom;
+      /*以左下角为旋转点*/
+    }
+
+    img:hover {
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <img src="images/ironMan.png" alt="">
+  </div>
+</body>
+
+</html>

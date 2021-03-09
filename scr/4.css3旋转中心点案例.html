@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      float: left;
+      /* overflow: hidden; */
+      width: 250px;
+      height: 250px;
+      border: 1px solid black;
+      margin: 10px;
+    }
+
+    div::before {
+      display: block;
+      content: 'Cyan';
+      width: 90%;
+      height: 100%;
+      background-color: skyblue;
+      transform-origin: left bottom;
+      transform: rotate(90deg);
+      transition: all .7s;
+    }
+
+    div:hover::before {
+      transform: rotate(0deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+
+</html>

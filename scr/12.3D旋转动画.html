@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 500px;
+            /* perspective也可以放在big上，不一样的地方是放在big盒子上时，当鼠标悬停时，box2的显示效果不变，放在body上会变 */
+        }
+        
+        .big {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            background-color: yellow;
+            transition: all 1s;
+            transform-style: preserve-3d;
+        }
+        
+        .big:hover {
+            transform: rotateY(60deg);
+        }
+        
+        div[class^="box"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .big .box1 {
+            background-color: green;
+        }
+        
+        .big .box2 {
+            background-color: blue;
+            transform: rotateX(80deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

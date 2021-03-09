@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes move {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      25% {
+        transform: translate(1000px, 0);
+      }
+
+      50% {
+        transform: translate(1000px, 500px);
+      }
+
+      75% {
+        transform: translate(0, 500px);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      /* animation: move 5s linear 0s infinite alternate; */
+      animation: move 5s
+        /* animation-name: move;
+            animation-duration: 1s; */
+        /* 重复次数 */
+        /* animation-iteration-count: 3; */
+        /* 是否反方向播放 默认 normal */
+        /* animation-direction: alternate; */
+        /* 设置停止位置 默认 backwards,设置该属性时重复次数须为1次*/
+        /* animation-fill-mode: forwards;动画结束后停在结束位置 */
+    }
+
+    div:hover {
+      /* 鼠标放上动画就停止 */
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

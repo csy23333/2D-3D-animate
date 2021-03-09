@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 总结：
+        不同点：
+        一.相对定位：
+        1.若相对定位盒子的父亲是 body (body 有高度)，且 top 和 left 值用百分数表示，则位移宽度和高度为 body 乘上 top 和 left 的百分数； 
+        2.若相对定位盒子的父亲是 body (body 无高度)，且 top 和 left 值用百分数表示，则位移宽度为body乘上 left 的百分数，无论top设置为百分之几，都不会影响位移的高度；
+        3.若相对定位盒子的父亲是 body (无论有无高度)，且 top 和 left 值用像素px表示，则位移宽度和高度以自身为基准进行位移。
+        二.transform：
+        1.若translate 用百分数表示，则位移宽度和高度为本身的宽高乘上 top 和 left 的百分数；
+        2.若translate 用像素px表示,则位移宽度和高度为以自身为基准进行 top 和 left 上显示的高度来位移；
+
+        相同点：
+        都不脱标
+        
+    -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 600px;
+      height: 600px;
+    }
+
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      /* transform: translate(50%, 50%); */
+      position: relative;
+      top: 50%;
+      left: 50%;
+      /* margin-left: -100px; */
+    }
+
+    .box2 {
+      width: 200px;
+      height: 200px;
+      background-color: purple;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <script>
+    console.log(document.querySelector('.box1').offsetLeft); //300
+  </script>
+</body>
+
+</html>
