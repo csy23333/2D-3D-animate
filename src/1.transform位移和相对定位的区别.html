@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 总结：
+        不同点：
+        一.相对定位：
+        1.若相对定位盒子的父亲是 body (body 有高度)，且 top 和 left 值用百分数表示，则位移宽度和高度为 body 乘上 top 和 left 的百分数； 
+        2.若相对定位盒子的父亲是 body (body 无高度)，且 top 和 left 值用百分数表示，则位移宽度为 body 乘上 left 的百分数，无论 top 设置为百分之几，都不会影响位移的高度；
+        3.若相对定位盒子的父亲是 body (无论有无高度)，且 top 和 left 值用像素 px 表示，则位移宽度和高度以自身为基准进行位移。
+        二.transform：
+        1.若 translate 用百分数表示，则位移宽度和高度为本身的宽高乘上 top 和 left 的百分数；
+        2.若 translate 用像素 px 表示,则位移宽度和高度为以自身为基准进行 top 和 left 上显示的高度来位移；
+
+        相同点：
+        都不脱标
+    -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 情况 1. body 有宽高，且 top 和 left 值用百分数表示 */
+      /* 虽然这里给的背景颜色是宽高为 600 的 body 盒子, 但是显示出来的却为页面的 background-color,而不是尺寸为 600 X 600 的 body 盒子 ; */
+      /* body {
+        width: 600px;
+        height: 600px;
+        background-color: pink;
+      }
+
+      .box1 {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        background-color: cyan;
+      } */
+
+      /* 情况 2. body 无宽高 ，且 top 和 left 值用百分数表示 */
+      /* body {
+        background-color: pink;
+      }
+
+      .box1 {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        background-color: cyan;
+      } */
+
+      /* 情况 3. 无论有无高度，且 top 和 left 值用像素 px 表示 */
+      /* body {
+        background-color: pink;
+      }
+
+      .box1 {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        top: 50px;
+        left: 50px;
+        background-color: cyan;
+      } */
+
+      /* 情况 4. translate 用百分数表示，则位移宽度和高度为本身的宽高乘上 top 和 left 的百分数 */
+      /* body {
+        background-color: pink;
+      }
+
+      .box1 {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform: translate(50%, 50%);
+        background-color: cyan;
+      } */
+
+      /* 情况 5. translate 用像素 px 表示,则位移宽度和高度为以自身为基准进行 top 和 left 上显示的高度来位移 */
+      body {
+        background-color: pink;
+      }
+
+      .box1 {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform: translate(50px, 50px);
+        background-color: cyan;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box1"></div>
+  </body>
+</html>
